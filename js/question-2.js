@@ -4,12 +4,15 @@
 
 
 const url = "https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-rating";
+const proxy = "https://noroffcors.herokuapp.com/";
+
+rightUrl = url + proxy; 
 
 const resultsContainer = document.querySelector(".results");
 
 async function getGame() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(rightUrl);
 
         const result = await response.json();
 
